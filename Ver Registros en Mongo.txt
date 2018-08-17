@@ -1,0 +1,3 @@
+Url: https://mlab.com/databases/marianoapidb/collections/users
+user: marianouribe
+password: mmmm@4444

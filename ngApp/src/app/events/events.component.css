@@ -1,0 +1,20 @@
+#right-panel {
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+    margin: 20px;
+    border-width: 2px;
+    width: 20%;
+    height: 400px;
+    float: left;
+    text-align: left;
+    padding-top: 0;
+  }
+
+  #right-panel select, #right-panel input {
+    font-size: 15px;
+  }
+
+  #right-panel select {
+    width: 100%;
+  }
