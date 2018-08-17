@@ -21,14 +21,28 @@ router.get('/', (req, res) => {
 router.post('/register', (req, res) => {
     
     let userData = req.body
-    let user = new User(userData)
-    user.save((error) =>{
-        if (error){
-            console.log(error)
+
+    User.findOne({email: userData.email}, (err, user)=>{
+        if (err){
+            console.log(err)
         }else{
-            res.send(200)
+            if (!user){
+                let userreg = new User(userData)
+                userreg.save((error) =>{
+                    if (error){
+                        console.log(error)
+                    }else{
+                        res.send(200)
+                    }
+                })
+            }else{
+                res.status(401).send('Email existe!!')
+                }
+            }
         }
-    })
+    )
+
+    
 })
 
 router.post('/login', (req, res)=>{

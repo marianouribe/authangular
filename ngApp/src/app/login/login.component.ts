@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 
+// import { Toastr } from 'toastr';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private _auth: AuthService) { }
 
   ngOnInit() {
+    // Toastr.success("Login successefully")
   }
   
   loginUser(){
@@ -25,7 +28,9 @@ export class LoginComponent implements OnInit {
         res => (
           console.log(res)  ,
           this.authlogin.loginOk = true,
-          this.authlogin.loginEvents = false ),
+          this.authlogin.loginEvents = false
+          // Toastr.success("Login successefully")
+           ),
         err => console.log(err)
       )
       
